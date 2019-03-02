@@ -41,7 +41,7 @@ function main() {
     //reset function here: HP/AP/CAP of temps
     //reset css/html
     //reset and show characters hp
-    reset();
+    
 
 
     //Character Selection
@@ -203,8 +203,7 @@ function surviveCheck() {
     else { }
 
 }
-
-function reset() {
+$("#reset").click(function () {
     tempSelectChar = 0;
     tempSelectEnemy = 0;
     graveyard = [];
@@ -220,8 +219,17 @@ function reset() {
         cap: 0
     }
 
-}
+    $("#obiwan").appendTo($(".start"));
+    $("#obiwanhp").html("");
+    $("#luke").appendTo($(".start"));
+    $("#lukehp").html("");
+    $("#darthM").appendTo($(".start"));
+    $("#darthMhp").html("");
+    $("#darthS").appendTo($(".start"));
+    $("#darthShp").html("");
+    $("#result").html("")
 
+});
 
 
 
