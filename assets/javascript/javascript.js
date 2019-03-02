@@ -1,7 +1,7 @@
 var tempSelectChar = 0;
 var tempSelectEnemy = 0;
 var graveyard = [];
-
+var baseAp = 10;
 var tempChar = {
     hp: 0,
     ap: 0,
@@ -13,24 +13,24 @@ var tempEnemy = {
     cap: 0
 }
 var obiwan = {
-    hp: 10,
-    ap: 110,
-    cap: 1110
+    hp: 100,
+    ap: 10,
+    cap: 10
 }
 var luke = {
-    hp: 0,
-    ap: 0,
-    cap: 0
+    hp: 100,
+    ap: 10,
+    cap: 10
 }
 var darthS = {
-    hp: 0,
-    ap: 0,
-    cap: 0
+    hp: 100,
+    ap: 10,
+    cap: 10
 }
 var darthM = {
-    hp: 0,
-    ap: 0,
-    cap: 0
+    hp: 100,
+    ap: 10,
+    cap: 10
 }
 
 main();
@@ -40,6 +40,7 @@ function main() {
     //*****INSERT****** 
     //reset function here: HP/AP/CAP of temps
     //reset css/html
+    //reset and show characters hp
     reset();
 
 
@@ -79,15 +80,18 @@ function main() {
                     break;
             }
         }
-    
+
     });
 
     //Enemy Selection
+
     $(".character").click(function () {
+
         if (tempSelectChar != 0 && tempSelectEnemy == 0 && this.id != tempSelectChar) {
             tempSelectEnemy = this.id;
             console.log("enemy = " + tempSelectEnemy);
             console.log("you = " + tempSelectChar);
+
             switch (tempSelectEnemy) {
                 case "obiwan":
                     tempEnemy = obiwan;
@@ -107,29 +111,10 @@ function main() {
                     break;
             }
         }
-    
+
     });
-
-
-
-
-    
-
-
-
-    //Attacking
-    ////////////////////////////////////////////////
-
-
-
 }
 
-//Enemy Selection
-//Move enemy to defender div
-
-
-// Character Selection
-//move all other characters to enemys
 
 
 
@@ -145,32 +130,77 @@ function main() {
 
 //Attacking
 $("#attack").click(function () {
+    if (!(tempChar.hp <= 0) && !(tempEnemy.hp <= 0)) {
 
-    tempChar.hp -= tempEnemy.cap;
+        tempChar.hp -= tempEnemy.cap;
 
-    tempEnemy.hp -= tempChar.ap;
+        tempEnemy.hp -= tempChar.ap;
 
-    tempChar.ap *= 2;
+        tempChar.ap += baseAp;
 
+        $("#" + tempSelectChar + "hp").html(tempChar.hp);
+        $("#" + tempSelectEnemy + "hp").html(tempEnemy.hp);
+        $("#result").html("You attacked " + tempSelectEnemy + " for " + tempChar.ap + " damage");
+        $("#result").append("<br>");
+        $("#result").append(tempSelectEnemy + " attacked you for " + tempEnemy.ap + " damage");
+        surviveCheck();
+    }
 });
 
 
 //Survival Check
-function SurviveCheck() {
+function surviveCheck() {
 
-    if (graveyard.length < 3 && tempChar.hp == 0 && tempEnemy.hp == 0) {
-        //draw
+    if (graveyard.length < 3 && tempChar.hp <= 0 && tempEnemy.hp <= 0) {
+        $("#result").html("You have been defeated --- GAME OVER!")
     } else if (tempChar.hp <= 0) {
-        //loss
+        $("#result").html("You have been defeated --- GAME OVER!")
     } else if (tempEnemy.hp <= 0) {
         //victory round
         //send enemy to graveyard
-        if (graveyard.length = 3) {
-            //victory game
+        $("#result").html("You have defeated " + tempSelectEnemy + ", choose another enemy to fight!")
+        $("#" + tempSelectEnemy).hide();
+        graveyard.push(tempSelectEnemy);
+
+
+        if (graveyard.length == 3) {
+            console.log(graveyard.length)
+            console.log(graveyard)
+            $("#result").html("You have defeated " + tempSelectEnemy + ", Congratulations on defeating everyone!")
+            tempSelectEnemy = 0;
         } else {
-            //choose next opponent
+            tempSelectEnemy = 0;
+            $(".character").click(function () {
+
+                if (tempSelectChar != 0 && tempSelectEnemy == 0 && this.id != tempSelectChar) {
+                    tempSelectEnemy = this.id;
+                    console.log("enemy = " + tempSelectEnemy);
+                    console.log("you = " + tempSelectChar);
+                    switch (tempSelectEnemy) {
+                        case "obiwan":
+                            tempEnemy = obiwan;
+                            $("#obiwan").appendTo($("#defend"));
+                            break;
+                        case "luke":
+                            tempEnemy = luke;
+                            $("#luke").appendTo($("#defend"));
+                            break;
+                        case "darthM":
+                            tempEnemy = darthM;
+                            $("#darthM").appendTo($("#defend"));
+                            break;
+                        case "darthS":
+                            tempEnemy = darthS;
+                            $("#darthS").appendTo($("#defend"));
+                            break;
+                    }
+                }
+
+            });
+
         }
     }
+    else { }
 
 }
 
@@ -189,6 +219,7 @@ function reset() {
         ap: 0,
         cap: 0
     }
+
 }
 
 
