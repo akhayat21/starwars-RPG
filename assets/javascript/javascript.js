@@ -1,5 +1,6 @@
 var tempSelectChar;
 var tempSelectEnemy;
+var graveyard = [];
 
 var tempChar = {
     hp: 0,
@@ -83,22 +84,25 @@ $(".character").click( function(){
 });
 
 //Enemy Selection
+//Move enemy to defender div
 $(".character").click( function(){
     //console.log(this.id)
     tempSelectEnemy = this.id;
     //console.log(tempSelect);
     if(tempSelectEnemy == tempSelectChar){
 
+    } else if(graveyard.indexOf(tempSelectEnemy) > -1){
+    
     } else {
     switch(tempSelectEnemy){
                         case "obiwan":
-                            tempChar = obiwan;
+                            tempEnemy = obiwan;
                         case "luke":
-                            tempChar = luke;
+                            tempEnemy = luke;
                         case "darthM":
-                            tempChar = darthM;
+                            tempEnemy = darthM;
                         case "darthS":
-                            tempChar = darthS;
+                            tempEnemy = darthS;
     }
 }
 });
@@ -106,14 +110,39 @@ $(".character").click( function(){
 
 
 //Attacking
-//onclick button with ID "attack"
 $("#attack").click( function(){
 
+tempChar.hp -= tempEnemy.cap;
 
+tempEnemy.hp -= tempChar.ap;
 
+tempChar.ap *= 2;
 
 });
 
+
+//Survival Check
+function SurviveCheck(){
+    
+    if(tempChar.hp == tempEnemy.hp && tempChar.hp == 0 && tempEnemy.hp ==0){
+        //draw
+    } else if(tempChar.hp <= 0){
+        //loss
+    } else if(tempEnemy.hp <= 0){
+        //victory round
+        //send enemy to graveyard
+        if( graveyard.length=3){
+            //victory game
+        } else {
+            //choose next opponent
+        }
+    }
+
+
+
+
+
+}
 
 
 
