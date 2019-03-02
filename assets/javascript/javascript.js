@@ -113,23 +113,11 @@ function main() {
         }
 
     });
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Attacking
 $("#attack").click(function () {
+    console.log("attack")
     if (!(tempChar.hp <= 0) && !(tempEnemy.hp <= 0)) {
 
         tempChar.hp -= tempEnemy.cap;
@@ -203,7 +191,12 @@ function surviveCheck() {
     else { }
 
 }
+
+
+
+
 $("#reset").click(function () {
+    console.log("reset")
     tempSelectChar = 0;
     tempSelectEnemy = 0;
     graveyard = [];
@@ -230,6 +223,32 @@ $("#reset").click(function () {
     $("#result").html("")
 
 });
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
