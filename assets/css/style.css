@@ -1,3 +1,44 @@
-.character{
-    
+h2{
+    margin: 1px;
+    font-size: 18px;
 }
+
+
+#you{
+    clear:both;
+    height: 150px;
+}
+#enemy{
+    clear:both;
+}
+#fight{
+    clear:both;
+}
+#defend{
+    clear:both;
+}
+#result{
+    clear:both;
+}
+
+#reset{
+    /* visibility: hidden; */
+    }
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+.character{
+border: 4px green solid;
+float: left;
+margin: 2px -2px 2px -2px;
+padding: 4px;
+text-align: center;
+}
+
+.character #enemy{
+    background-color: red;
+}
+
