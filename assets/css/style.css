@@ -1,15 +1,22 @@
+body{
+    background-image: url('../images/bg.jpg')
+}
+
+
 h2{
     margin: 1px;
-    font-size: 18px;
+    font-size: 30px;
+    color: white;
 }
 
 
 #you{
     clear:both;
-    height: 150px;
+    height: 160px;
 }
 #enemy{
     clear:both;
+    height: 160px;
 }
 #fight{
     clear:both;
@@ -28,17 +35,28 @@ h2{
 img{
     width: 100px;
     height: auto;
+    border: 0.5px grey solid;
 }
 
 .character{
 border: 4px green solid;
 float: left;
+background-color: white;
 margin: 2px -2px 2px -2px;
-padding: 4px;
+padding: 4px 25px 4px 25px;
 text-align: center;
 }
 
 .character #enemy{
     background-color: red;
+}
+
+.character #enemy{
+    background-color: black;
+}
+
+button{
+    padding: 3px;
+    margin: 2px;
 }
 

@@ -47,28 +47,52 @@ function main() {
                     tempChar = obiwan;
                     $("#obiwan").appendTo($("#you"));
                     $("#luke").appendTo($("#enemy"));
+                    $("#luke").css("border","4px black solid");
+                    $("#luke").css("background-color","red");
                     $("#darthM").appendTo($("#enemy"));
+                    $("#darthM").css("border","4px black solid");
+                    $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#enemy"));
+                    $("#darthS").css("border","4px black solid");
+                    $("#darthS").css("background-color","red");
                     break;
                 case "luke":
                     tempChar = luke;
                     $("#obiwan").appendTo($("#enemy"));
+                    $("#obiwan").css("border","4px black solid");
+                    $("#obiwan").css("background-color","red");
                     $("#luke").appendTo($("#you"));
                     $("#darthM").appendTo($("#enemy"));
+                    $("#darthM").css("border","4px black solid");
+                    $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#enemy"));
+                    $("#darthS").css("border","4px black solid");
+                    $("#darthS").css("background-color","red");
                     break;
                 case "darthM":
                     tempChar = darthM;
                     $("#obiwan").appendTo($("#enemy"));
+                    $("#obiwan").css("border","4px black solid");
+                    $("#obiwan").css("background-color","red");
                     $("#luke").appendTo($("#enemy"));
+                    $("#luke").css("border","4px black solid");
+                    $("#luke").css("background-color","red");
                     $("#darthM").appendTo($("#you"));
                     $("#darthS").appendTo($("#enemy"));
+                    $("#darthS").css("border","4px black solid");
+                    $("#darthS").css("background-color","red");
                     break;
                 case "darthS":
                     tempChar = darthS;
                     $("#obiwan").appendTo($("#enemy"));
+                    $("#obiwan").css("border","4px black solid");
+                    $("#obiwan").css("background-color","red");
                     $("#luke").appendTo($("#enemy"));
+                    $("#luke").css("border","4px black solid");
+                    $("#luke").css("background-color","red");
                     $("#darthM").appendTo($("#enemy"));
+                    $("#darthM").css("border","4px black solid");
+                    $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#you"));
                     break;
             }
@@ -89,18 +113,30 @@ function main() {
                 case "obiwan":
                     tempEnemy = obiwan;
                     $("#obiwan").appendTo($("#defend"));
+                    $("#obiwan").css("border","4px green solid");
+                    $("#obiwan").css("background-color","black");
+                    $("#obiwan").css("color","white");
                     break;
                 case "luke":
                     tempEnemy = luke;
                     $("#luke").appendTo($("#defend"));
+                    $("#luke").css("border","4px green solid");
+                    $("#luke").css("background-color","black");
+                    $("#luke").css("color","white");
                     break;
                 case "darthM":
                     tempEnemy = darthM;
                     $("#darthM").appendTo($("#defend"));
+                    $("#darthM").css("border","4px green solid");
+                    $("#darthM").css("background-color","black");
+                    $("#darthM").css("color","white");
                     break;
                 case "darthS":
                     tempEnemy = darthS;
                     $("#darthS").appendTo($("#defend"));
+                    $("#darthS").css("border","4px green solid");
+                    $("#darthS").css("background-color","black");
+                    $("#darthS").css("color","white");
                     break;
             }
         }
@@ -168,18 +204,30 @@ function main() {
                             case "obiwan":
                                 tempEnemy = obiwan;
                                 $("#obiwan").appendTo($("#defend"));
+                                $("#obiwan").css("border","4px green solid");
+                                $("#obiwan").css("background-color","black");
+                                $("#obiwan").css("color","white");
                                 break;
                             case "luke":
                                 tempEnemy = luke;
                                 $("#luke").appendTo($("#defend"));
+                                $("#luke").css("border","4px green solid");
+                                $("#luke").css("background-color","black");
+                                $("#luke").css("color","white");
                                 break;
                             case "darthM":
                                 tempEnemy = darthM;
                                 $("#darthM").appendTo($("#defend"));
+                                $("#darthM").css("border","4px green solid");
+                                $("#darthM").css("background-color","black");
+                                $("#darthM").css("color","white");
                                 break;
                             case "darthS":
                                 tempEnemy = darthS;
                                 $("#darthS").appendTo($("#defend"));
+                                $("#darthS").css("border","4px green solid");
+                                $("#darthS").css("background-color","black");
+                                $("#darthS").css("color","white");
                                 break;
                         }
                     }
@@ -238,15 +286,27 @@ function main() {
 
 
         $("#obiwan").appendTo($(".start"));
+        $("#obiwan").css("border","4px green solid");
+        $("#obiwan").css("background-color","white");
+        $("#obiwan").css("color","black");
         $("#obiwanhp").html(obiwan.hp);
         $("#obiwan").show();
         $("#luke").appendTo($(".start"));
+        $("#luke").css("border","4px green solid");
+        $("#luke").css("background-color","white");
+        $("#luke").css("color","black");
         $("#lukehp").html(luke.hp);
         $("#luke").show();
         $("#darthS").appendTo($(".start"));
+        $("#darthS").css("border","4px green solid");
+        $("#dathsS").css("background-color","white");
+        $("#darthS").css("color","black");
         $("#darthShp").html(darthS.hp);
         $("#darthS").show();
         $("#darthM").appendTo($(".start"));
+        $("#darthM").css("border","4px green solid");
+        $("#dathsM").css("background-color","white");
+        $("#darthM").css("color","black");
         $("#darthMhp").html(darthM.hp);
         $("#darthM").show();
 
