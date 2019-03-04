@@ -60,3 +60,10 @@ button{
     margin: 2px;
 }
 
+#result{
+    color: white;
+}
+
+.start{
+    background-color: white;
+}

@@ -1,7 +1,7 @@
 var tempSelectChar = 0;
 var tempSelectEnemy = 0;
 var graveyard = [];
-var baseAp = 10;
+var baseAp;
 var tempChar = {
     hp: 0,
     ap: 0,
@@ -13,25 +13,26 @@ var tempEnemy = {
     cap: 0
 }
 var obiwan = {
-    hp: 100,
-    ap: 10,
-    cap: 10
+    hp: 90,
+    ap: 16,
+    cap: 4
 }
 var luke = {
     hp: 100,
-    ap: 10,
-    cap: 10
+    ap: 14,
+    cap: 3
 }
 var darthS = {
-    hp: 100,
-    ap: 10,
-    cap: 10
+    hp: 110,
+    ap: 2,
+    cap: 15
 }
 var darthM = {
-    hp: 100,
-    ap: 10,
-    cap: 10
+    hp: 120,
+    ap: 1,
+    cap: 20
 }
+
 
 main();
 // main function that calls all other functions
@@ -49,12 +50,13 @@ function main() {
                     $("#luke").appendTo($("#enemy"));
                     $("#luke").css("border","4px black solid");
                     $("#luke").css("background-color","red");
-                    $("#darthM").appendTo($("#enemy"));
-                    $("#darthM").css("border","4px black solid");
-                    $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#enemy"));
                     $("#darthS").css("border","4px black solid");
                     $("#darthS").css("background-color","red");
+                    $("#darthM").appendTo($("#enemy"));
+                    $("#darthM").css("border","4px black solid");
+                    $("#darthM").css("background-color","red");
+                    baseAp = obiwan.ap
                     break;
                 case "luke":
                     tempChar = luke;
@@ -62,12 +64,13 @@ function main() {
                     $("#obiwan").css("border","4px black solid");
                     $("#obiwan").css("background-color","red");
                     $("#luke").appendTo($("#you"));
-                    $("#darthM").appendTo($("#enemy"));
-                    $("#darthM").css("border","4px black solid");
-                    $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#enemy"));
                     $("#darthS").css("border","4px black solid");
                     $("#darthS").css("background-color","red");
+                    $("#darthM").appendTo($("#enemy"));
+                    $("#darthM").css("border","4px black solid");
+                    $("#darthM").css("background-color","red");
+                    baseAp = luke.ap
                     break;
                 case "darthM":
                     tempChar = darthM;
@@ -81,6 +84,7 @@ function main() {
                     $("#darthS").appendTo($("#enemy"));
                     $("#darthS").css("border","4px black solid");
                     $("#darthS").css("background-color","red");
+                    baseAp = darthM.ap
                     break;
                 case "darthS":
                     tempChar = darthS;
@@ -94,6 +98,7 @@ function main() {
                     $("#darthM").css("border","4px black solid");
                     $("#darthM").css("background-color","red");
                     $("#darthS").appendTo($("#you"));
+                    baseAp = darthS.ap
                     break;
             }
         }
@@ -152,7 +157,7 @@ function main() {
         console.log(tempEnemy.hp)
 
         if (!(tempChar.hp <= 0) && !(tempEnemy.hp <= 0)) {
-
+            
             tempChar.hp -= tempEnemy.cap;
 
             tempEnemy.hp -= tempChar.ap;
@@ -264,24 +269,24 @@ function main() {
             cap: 0
         }
         obiwan = {
-            hp: 100,
-            ap: 10,
-            cap: 10
+            hp: 90,
+            ap: 18,
+            cap: 4
         }
         luke = {
             hp: 100,
-            ap: 10,
-            cap: 10
+            ap: 16,
+            cap: 3
         }
         darthS = {
-            hp: 100,
-            ap: 10,
-            cap: 10
+            hp: 110,
+            ap: 3,
+            cap: 15
         }
         darthM = {
-            hp: 100,
-            ap: 10,
-            cap: 10
+            hp: 120,
+            ap: 2,
+            cap: 20
         }
 
 
@@ -291,24 +296,29 @@ function main() {
         $("#obiwan").css("color","black");
         $("#obiwanhp").html(obiwan.hp);
         $("#obiwan").show();
+
         $("#luke").appendTo($(".start"));
         $("#luke").css("border","4px green solid");
         $("#luke").css("background-color","white");
         $("#luke").css("color","black");
         $("#lukehp").html(luke.hp);
         $("#luke").show();
+
         $("#darthS").appendTo($(".start"));
         $("#darthS").css("border","4px green solid");
-        $("#dathsS").css("background-color","white");
+        $("#darthS").css("background-color","white");
         $("#darthS").css("color","black");
         $("#darthShp").html(darthS.hp);
         $("#darthS").show();
+
         $("#darthM").appendTo($(".start"));
         $("#darthM").css("border","4px green solid");
-        $("#dathsM").css("background-color","white");
+        $("#darthM").css("background-color","white");
         $("#darthM").css("color","black");
         $("#darthMhp").html(darthM.hp);
         $("#darthM").show();
+
+        
 
         $("#result").empty();
         $("#reset").hide();
