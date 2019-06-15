@@ -42,7 +42,7 @@ function main() {
     $(".character").click(function () {
         if (tempSelectChar == 0) {
             tempSelectChar = this.id;
-            console.log("you = " + tempSelectChar);
+            // console.log("you = " + tempSelectChar);
             switch (tempSelectChar) {
                 case "obiwan":
                     tempChar = obiwan;
@@ -111,8 +111,8 @@ function main() {
 
         if (tempSelectChar != 0 && tempSelectEnemy == 0 && this.id != tempSelectChar) {
             tempSelectEnemy = this.id;
-            console.log("enemy = " + tempSelectEnemy);
-            console.log("you = " + tempSelectChar);
+            // console.log("enemy = " + tempSelectEnemy);
+            // console.log("you = " + tempSelectChar);
 
             switch (tempSelectEnemy) {
                 case "obiwan":
@@ -151,10 +151,10 @@ function main() {
 
     //Attacking
     $("#attack").click(function () {
-        console.log(tempSelectEnemy)
-        console.log(tempSelectChar)
-        console.log(tempChar.hp)
-        console.log(tempEnemy.hp)
+        // console.log(tempSelectEnemy)
+        // console.log(tempSelectChar)
+        // console.log(tempChar.hp)
+        // console.log(tempEnemy.hp)
 
         if (!(tempChar.hp <= 0) && !(tempEnemy.hp <= 0)) {
             
@@ -192,8 +192,8 @@ function main() {
 
 
             if (graveyard.length == 3) {
-                console.log(graveyard.length)
-                console.log(graveyard)
+                // console.log(graveyard.length)
+                // console.log(graveyard)
                 $("#result").html("You have defeated " + tempSelectEnemy + ", Congratulations on defeating everyone!")
                 tempSelectEnemy = 0;
                 $("#reset").show();
@@ -203,8 +203,8 @@ function main() {
 
                     if (tempSelectChar != 0 && tempSelectEnemy == 0 && this.id != tempSelectChar) {
                         tempSelectEnemy = this.id;
-                        console.log("enemy = " + tempSelectEnemy);
-                        console.log("you = " + tempSelectChar);
+                        // console.log("enemy = " + tempSelectEnemy);
+                        // console.log("you = " + tempSelectChar);
                         switch (tempSelectEnemy) {
                             case "obiwan":
                                 tempEnemy = obiwan;
@@ -253,7 +253,7 @@ function main() {
     function reset()
     {
         
-        console.log("reset")
+        // console.log("reset")
         tempSelectChar = 0;
         tempSelectEnemy = 0;
         graveyard = [];

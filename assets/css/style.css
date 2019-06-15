@@ -67,3 +67,11 @@ button{
 .start{
     background-color: white;
 }
+
+.container {
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: auto;
+}
